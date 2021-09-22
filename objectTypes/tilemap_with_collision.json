@@ -1,0 +1,27 @@
+{
+	"name": "Tilemap_With_Collision",
+	"plugin-id": "Tilemap",
+	"sid": 473166679807692,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "solid",
+			"name": "Solid",
+			"sid": 416728874781834
+		}
+	],
+	"effectTypes": [],
+	"image": {
+		"width": 192,
+		"height": 160,
+		"originX": 0.5,
+		"originY": 0.5,
+		"originalSource": "C:\\Users\\jesse\\Downloads\\2D Pixel Dungeon Asset Pack\\character and tileset\\Dungeon_Tileset_No_Collision.png",
+		"exportFormat": "png",
+		"exportQuality": 0.8,
+		"imageSpriteId": 9020446,
+		"useCollisionPoly": true
+	},
+	"tile-collision-polys": {}
+}

@@ -1,0 +1,21 @@
+{
+	"name": "tut_tileset",
+	"plugin-id": "Tilemap",
+	"sid": 127024045042479,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"image": {
+		"width": 192,
+		"height": 160,
+		"originX": 0.5,
+		"originY": 0.5,
+		"originalSource": "C:\\Users\\jesse\\OneDrive\\Desktop\\tut_tileset.png",
+		"exportFormat": "png",
+		"exportQuality": 0.8,
+		"imageSpriteId": 1481376,
+		"useCollisionPoly": true
+	},
+	"tile-collision-polys": {}
+}

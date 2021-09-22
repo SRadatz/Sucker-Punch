@@ -1,0 +1,80 @@
+{
+	"name": "Sprite5",
+	"plugin-id": "Sprite",
+	"sid": 903166085784372,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "EnemyHealth",
+			"type": "number",
+			"desc": "",
+			"sid": 424598429106334
+		}
+	],
+	"behaviorTypes": [
+		{
+			"behaviorId": "MoveTo",
+			"name": "MoveTo",
+			"sid": 828555286760450
+		},
+		{
+			"behaviorId": "solid",
+			"name": "Solid",
+			"sid": 609574462699618
+		},
+		{
+			"behaviorId": "LOS",
+			"name": "LineOfSight",
+			"sid": 357758335066191
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 16,
+						"height": 16,
+						"originX": 0.625,
+						"originY": 0.5625,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 9374920,
+						"collisionPoly": {
+							"points": [
+								0.4375,
+								0.4375,
+								0.5,
+								0.3125,
+								0.8125,
+								0.125,
+								0.875,
+								0.5,
+								0.875,
+								0.875,
+								0.5,
+								0.9375,
+								0.3125,
+								0.625,
+								0.375,
+								0.5
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 563037042393398,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

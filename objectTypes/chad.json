@@ -1,0 +1,87 @@
+{
+	"name": "Chad",
+	"plugin-id": "Sprite",
+	"sid": 607847005548655,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "Health",
+			"type": "number",
+			"desc": "",
+			"sid": 491835087864763
+		}
+	],
+	"behaviorTypes": [
+		{
+			"behaviorId": "LOS",
+			"name": "LineOfSight",
+			"sid": 142095105747852
+		},
+		{
+			"behaviorId": "MoveTo",
+			"name": "MoveTo",
+			"sid": 735636219084349
+		},
+		{
+			"behaviorId": "solid",
+			"name": "Solid",
+			"sid": 317527629810448
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 16,
+						"height": 16,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 8018590,
+						"collisionPoly": {
+							"points": [
+								0.3125,
+								0.3125,
+								0.5,
+								0,
+								0.6875,
+								0.25,
+								0.875,
+								0.5,
+								0.8125,
+								0.8125,
+								0.5,
+								0.875,
+								0.1875,
+								0.75,
+								0.125,
+								0.5
+							]
+						},
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "Image Point 1",
+								"x": 1,
+								"y": 0.6875
+							}
+						],
+						"duration": 1
+					}
+				],
+				"sid": 284220429854549,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}
