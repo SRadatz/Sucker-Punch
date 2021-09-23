@@ -6,7 +6,7 @@
 			"overriden": 0,
 			"instances": [
 				{
-					"type": "Tilemap_No_Collision",
+					"type": "Tilemap_Collision",
 					"properties": {
 						"initially-visible": true,
 						"tile-width": 16,
@@ -21,7 +21,14 @@
 					},
 					"uid": 34,
 					"instanceVariables": {},
-					"behaviors": {},
+					"behaviors": {
+						"Solid": {
+							"properties": {
+								"enabled": true,
+								"tags": ""
+							}
+						}
+					},
 					"ownData": {
 						"tilemapData": {
 							"width": 36,
@@ -369,7 +376,7 @@
 			"overriden": 0,
 			"instances": [
 				{
-					"type": "Tilemap_No_Collision",
+					"type": "Tilemap_Collision",
 					"properties": {
 						"initially-visible": true,
 						"tile-width": 16,
@@ -384,7 +391,14 @@
 					},
 					"uid": 32,
 					"instanceVariables": {},
-					"behaviors": {},
+					"behaviors": {
+						"Solid": {
+							"properties": {
+								"enabled": true,
+								"tags": ""
+							}
+						}
+					},
 					"ownData": {
 						"tilemapData": {
 							"width": 36,
