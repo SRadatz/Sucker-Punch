@@ -417,39 +417,6 @@
 					}
 				},
 				{
-					"type": "TiledBackground3",
-					"properties": {
-						"initially-visible": true,
-						"origin": "top-left",
-						"wrap-horizontal": "repeat",
-						"wrap-vertical": "repeat",
-						"image-offset-x": 0,
-						"image-offset-y": 0,
-						"image-scale-x": 1,
-						"image-scale-y": 1,
-						"image-angle": 0
-					},
-					"uid": 49,
-					"instanceVariables": {},
-					"behaviors": {},
-					"world": {
-						"x": 601.3269272631328,
-						"y": 1269.0046492716863,
-						"width": 47.82852326796478,
-						"height": 15.647986218298456,
-						"originX": 0,
-						"originY": 0,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"angle": 0,
-						"zElevation": 0
-					}
-				},
-				{
 					"type": "TiledBackground4",
 					"properties": {
 						"initially-visible": true,
