@@ -104,7 +104,6 @@
 					},
 					"uid": 11,
 					"instanceVariables": {
-						"Invincibility": false,
 						"CD": 0
 					},
 					"behaviors": {
@@ -139,6 +138,9 @@
 								"stop-on-solids": false,
 								"enabled": true
 							}
+						},
+						"Flash": {
+							"properties": {}
 						}
 					},
 					"world": {

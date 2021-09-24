@@ -47,6 +47,22 @@
 			"bundled": false
 		},
 		{
+			"type": "plugin",
+			"id": "Spritefont2",
+			"name": "Sprite font",
+			"author": "Scirra",
+			"version": "r260",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Button",
+			"name": "Button",
+			"author": "Scirra",
+			"version": "r260",
+			"bundled": false
+		},
+		{
 			"type": "behavior",
 			"id": "solid",
 			"name": "Solid",
@@ -82,6 +98,14 @@
 			"type": "behavior",
 			"id": "MoveTo",
 			"name": "Move To",
+			"author": "Scirra",
+			"version": "r260",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Flash",
+			"name": "Flash",
 			"author": "Scirra",
 			"version": "r260",
 			"bundled": false
@@ -128,8 +152,24 @@
 		},
 		{
 			"type": "behavior",
+			"id": "Sin",
+			"name": "Sine",
+			"author": "Scirra",
+			"version": "r260",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
 			"id": "Turret",
 			"name": "Turret",
+			"author": "Scirra",
+			"version": "r260",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Fade",
+			"name": "Fade",
 			"author": "Scirra",
 			"version": "r260",
 			"bundled": false
@@ -167,7 +207,11 @@
 			"Sprite8",
 			"Sprite",
 			"Sprite7",
-			"Sprite9"
+			"Sprite9",
+			"SpriteFont",
+			"DodgeRollButton2",
+			"SpriteFont2",
+			"Button2"
 		],
 		"subfolders": []
 	},
@@ -184,7 +228,8 @@
 			"Room 2",
 			"Room 3",
 			"Room 4",
-			"Layout Boss"
+			"Layout Boss",
+			"Layout 1"
 		],
 		"subfolders": []
 	},
