@@ -1,0 +1,88 @@
+{
+	"name": "Sprite6",
+	"plugin-id": "Sprite",
+	"sid": 634669287428606,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "ShootCD",
+			"type": "number",
+			"desc": "",
+			"sid": 192065562143824
+		},
+		{
+			"name": "Health",
+			"type": "number",
+			"desc": "",
+			"sid": 870819269898185
+		}
+	],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Turret",
+			"name": "Turret",
+			"sid": 548046230644501
+		},
+		{
+			"behaviorId": "LOS",
+			"name": "LineOfSight",
+			"sid": 227457541095244
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 16,
+						"height": 16,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 1112436,
+						"collisionPoly": {
+							"points": [
+								0.375,
+								0.375,
+								0.5,
+								0.0625,
+								0.75,
+								0.1875,
+								0.75,
+								0.5,
+								0.75,
+								0.75,
+								0.5,
+								0.9375,
+								0.25,
+								0.6875,
+								0.375,
+								0.5
+							]
+						},
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "Image Point 1",
+								"x": 0.9375,
+								"y": 0.6875
+							}
+						],
+						"duration": 1
+					}
+				],
+				"sid": 564502713239641,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}
