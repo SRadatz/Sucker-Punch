@@ -211,10 +211,7 @@
 			"SpriteFont",
 			"DodgeRollButton2",
 			"SpriteFont2",
-			"Button2",
-			"ut_tileset_2",
-			"TiledBackground6",
-			"Tilemap_Collision"
+			"Button2"
 		],
 		"subfolders": []
 	},
@@ -227,12 +224,10 @@
 	"layouts": {
 		"items": [
 			"Tutorial",
-			"Tutorial_2.0",
 			"Room 1",
 			"Room 2",
 			"Room 3",
 			"Room 4",
-			"Room 5",
 			"Layout Boss",
 			"Layout 1"
 		],
