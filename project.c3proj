@@ -147,7 +147,7 @@
 			"Door_Dmg",
 			"Door_MDmg",
 			"Icon_Health",
-			"Tilemap_Collision",
+			"Tilemap_No_Collision",
 			"tut_tileset",
 			"Tilemap2",
 			"Tilemap_With_Collision",
@@ -156,6 +156,7 @@
 			"Sprite3",
 			"Mouse",
 			"Sprite4",
+			"TiledBackground2",
 			"TiledBackground3",
 			"TiledBackground4",
 			"TiledBackground5",
@@ -166,9 +167,7 @@
 			"Sprite8",
 			"Sprite",
 			"Sprite7",
-			"Sprite9",
-			"TiledBackground6",
-			"ut_tileset_2"
+			"Sprite9"
 		],
 		"subfolders": []
 	},
@@ -181,13 +180,12 @@
 	"layouts": {
 		"items": [
 			"Tutorial",
-			"Tutorial_2.0",
 			"Room 1",
 			"Room 2",
 			"Room 3",
-			"Room 4 (Maybe Broken)",
-			"Room 5",
-			"Layout Boss"
+			"Room 4",
+			"Layout Boss",
+			"Room 5"
 		],
 		"subfolders": []
 	},
