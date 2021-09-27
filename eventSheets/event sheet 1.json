@@ -33,6 +33,16 @@
 		},
 		{
 			"eventType": "variable",
+			"name": "Invincibility",
+			"type": "boolean",
+			"initialValue": "false",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 415591093964823
+		},
+		{
+			"eventType": "variable",
 			"name": "MaxHealth",
 			"type": "number",
 			"initialValue": "3",
@@ -60,6 +70,16 @@
 			"isStatic": false,
 			"isConstant": false,
 			"sid": 626068994810543
+		},
+		{
+			"eventType": "variable",
+			"name": "tempHealth",
+			"type": "number",
+			"initialValue": "3",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 557215049929914
 		},
 		{
 			"eventType": "block",
@@ -329,7 +349,7 @@
 				{
 					"id": "spawn-another-object",
 					"objectClass": "Beta",
-					"sid": 636617307440849,
+					"sid": 176614493035460,
 					"parameters": {
 						"object": "Sprite2",
 						"layer": "0",
@@ -340,7 +360,7 @@
 				{
 					"id": "set-angle-toward-position",
 					"objectClass": "Sprite2",
-					"sid": 578605019787879,
+					"sid": 868891594737719,
 					"parameters": {
 						"x": "Mouse.X",
 						"y": "Mouse.Y + (MDamage * 10)"
@@ -349,7 +369,7 @@
 				{
 					"id": "set-eventvar-value",
 					"objectClass": "System",
-					"sid": 995656954073974,
+					"sid": 468026725904486,
 					"parameters": {
 						"variable": "AttackCD",
 						"value": "0.5"
@@ -357,35 +377,6 @@
 				}
 			],
 			"sid": 260205000535319
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "every-tick",
-					"objectClass": "System",
-					"sid": 411366187873007
-				}
-			],
-			"actions": [
-				{
-					"id": "set-width",
-					"objectClass": "TiledBackground4",
-					"sid": 295828179332880,
-					"parameters": {
-						"width": "Health * 16"
-					}
-				},
-				{
-					"id": "set-width",
-					"objectClass": "TiledBackground5",
-					"sid": 401687306210793,
-					"parameters": {
-						"width": "MaxHealth*16"
-					}
-				}
-			],
-			"sid": 594736335575309
 		},
 		{
 			"eventType": "block",
@@ -451,6 +442,57 @@
 					"parameters": {
 						"obstacle": "Tilemap"
 					}
+				},
+				{
+					"id": "set-width",
+					"objectClass": "TiledBackground4",
+					"sid": 885643584810534,
+					"parameters": {
+						"width": "Health * 16"
+					}
+				},
+				{
+					"id": "set-width",
+					"objectClass": "TiledBackground5",
+					"sid": 361014804636833,
+					"parameters": {
+						"width": "MaxHealth * 16"
+					}
+				},
+				{
+					"id": "subtract-from-instvar",
+					"objectClass": "Beta",
+					"sid": 248784194533375,
+					"parameters": {
+						"instance-variable": "CD",
+						"value": "dt"
+					}
+				},
+				{
+					"id": "subtract-from-eventvar",
+					"objectClass": "System",
+					"sid": 611174987891154,
+					"parameters": {
+						"variable": "AttackCD",
+						"value": "dt"
+					}
+				},
+				{
+					"id": "subtract-from-instvar",
+					"objectClass": "Sprite6",
+					"sid": 655229732186708,
+					"parameters": {
+						"instance-variable": "ShootCD",
+						"value": "dt"
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "SpriteFont2",
+					"sid": 438654371137539,
+					"parameters": {
+						"text": "\"enemies: \" & DoorLock"
+					}
 				}
 			],
 			"sid": 826591854551326,
@@ -475,6 +517,17 @@
 							"parameters": {
 								"variable": "Health",
 								"value": "1"
+							}
+						},
+						{
+							"id": "flash",
+							"objectClass": "Beta",
+							"sid": 406488071734962,
+							"behaviorType": "Flash",
+							"parameters": {
+								"on-time": "0.1",
+								"off-time": "0.1",
+								"duration": "1.0"
 							}
 						}
 					],
@@ -644,6 +697,150 @@
 						}
 					],
 					"sid": 254904528085601
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 675946906267254,
+							"parameters": {
+								"variable": "Health",
+								"comparison": 3,
+								"value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 677684768824875,
+							"parameters": {
+								"variable": "Health",
+								"value": "0"
+							}
+						},
+						{
+							"id": "destroy",
+							"objectClass": "Beta",
+							"sid": 316048885515512
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "Button2",
+							"sid": 153455132071552,
+							"parameters": {
+								"visibility": "visible"
+							}
+						}
+					],
+					"sid": 991426262617890
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 500882733205621,
+							"parameters": {
+								"variable": "DoorLock",
+								"comparison": 3,
+								"value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-collisions-enabled",
+							"objectClass": "Door_Dmg",
+							"sid": 988423102983796,
+							"parameters": {
+								"collisions": "enabled"
+							}
+						},
+						{
+							"id": "set-collisions-enabled",
+							"objectClass": "Door_Health",
+							"sid": 218466130536111,
+							"parameters": {
+								"collisions": "enabled"
+							}
+						},
+						{
+							"id": "set-collisions-enabled",
+							"objectClass": "Door_MDmg",
+							"sid": 296967659171290,
+							"parameters": {
+								"collisions": "enabled"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "SpriteFont2",
+							"sid": 923762381444316,
+							"parameters": {
+								"text": "\"enemies: 0\" "
+							}
+						}
+					],
+					"sid": 283221853963815
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 211962769035423,
+							"parameters": {
+								"variable": "Invincibility"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 775135556436820,
+							"parameters": {
+								"variable": "Health",
+								"value": "tempHealth"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "DodgeRollButton2",
+							"sid": 385680290892750,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						}
+					],
+					"sid": 812354031855501
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 627835690819827
+						}
+					],
+					"actions": [
+						{
+							"id": "set-visible",
+							"objectClass": "DodgeRollButton2",
+							"sid": 505004227122718,
+							"parameters": {
+								"visibility": "visible"
+							}
+						}
+					],
+					"sid": 669304042466534
 				}
 			]
 		},
@@ -691,15 +888,6 @@
 							"id": "destroy",
 							"objectClass": "Sprite5",
 							"sid": 307898993064258
-						},
-						{
-							"id": "subtract-from-eventvar",
-							"objectClass": "System",
-							"sid": 380585669961099,
-							"parameters": {
-								"variable": "DoorLock",
-								"value": "1"
-							}
 						}
 					],
 					"sid": 638841720564452,
@@ -821,15 +1009,6 @@
 							"id": "destroy",
 							"objectClass": "Sprite5",
 							"sid": 925934472492499
-						},
-						{
-							"id": "subtract-from-eventvar",
-							"objectClass": "System",
-							"sid": 172053060706456,
-							"parameters": {
-								"variable": "DoorLock",
-								"value": "1"
-							}
 						}
 					],
 					"sid": 149855049683847
@@ -972,6 +1151,15 @@
 					],
 					"actions": [
 						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 867794207908649,
+							"parameters": {
+								"variable": "tempHealth",
+								"value": "Health"
+							}
+						},
+						{
 							"id": "set-animation",
 							"objectClass": "Beta",
 							"sid": 651142978201655,
@@ -981,21 +1169,21 @@
 							}
 						},
 						{
-							"id": "set-instvar-value",
-							"objectClass": "Beta",
-							"sid": 431953189638724,
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 441218516988834,
 							"parameters": {
-								"instance-variable": "CD",
-								"value": "3"
+								"variable": "Invincibility",
+								"value": "true"
 							}
 						},
 						{
-							"id": "set-boolean-instvar",
+							"id": "set-instvar-value",
 							"objectClass": "Beta",
-							"sid": 842084572143441,
+							"sid": 169579563654303,
 							"parameters": {
-								"instance-variable": "Invincibility",
-								"value": "true"
+								"instance-variable": "CD",
+								"value": "0.5"
 							}
 						},
 						{
@@ -1009,17 +1197,17 @@
 						{
 							"id": "wait",
 							"objectClass": "System",
-							"sid": 897166981731232,
+							"sid": 310737608569871,
 							"parameters": {
-								"seconds": "3.0"
+								"seconds": "0.5"
 							}
 						},
 						{
-							"id": "set-boolean-instvar",
-							"objectClass": "Beta",
-							"sid": 903736439011433,
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 215203015096147,
 							"parameters": {
-								"instance-variable": "Invincibility",
+								"variable": "Invincibility",
 								"value": "false"
 							}
 						}
@@ -1037,6 +1225,15 @@
 					],
 					"actions": [
 						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 950277800454080,
+							"parameters": {
+								"variable": "tempHealth",
+								"value": "Health"
+							}
+						},
+						{
 							"id": "set-animation",
 							"objectClass": "Beta",
 							"sid": 234748994463835,
@@ -1046,21 +1243,21 @@
 							}
 						},
 						{
-							"id": "set-instvar-value",
-							"objectClass": "Beta",
-							"sid": 769582774564891,
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 461340808233595,
 							"parameters": {
-								"instance-variable": "CD",
-								"value": "3"
+								"variable": "Invincibility",
+								"value": "true"
 							}
 						},
 						{
-							"id": "set-boolean-instvar",
+							"id": "set-instvar-value",
 							"objectClass": "Beta",
-							"sid": 177113612197385,
+							"sid": 636262480444600,
 							"parameters": {
-								"instance-variable": "Invincibility",
-								"value": "true"
+								"instance-variable": "CD",
+								"value": "0.5"
 							}
 						},
 						{
@@ -1074,17 +1271,17 @@
 						{
 							"id": "wait",
 							"objectClass": "System",
-							"sid": 505394858923666,
+							"sid": 304853569429744,
 							"parameters": {
-								"seconds": "3.0"
+								"seconds": "0.5"
 							}
 						},
 						{
-							"id": "set-boolean-instvar",
-							"objectClass": "Beta",
-							"sid": 612346714275757,
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 838731311622883,
 							"parameters": {
-								"instance-variable": "Invincibility",
+								"variable": "Invincibility",
 								"value": "false"
 							}
 						}
@@ -1149,15 +1346,7 @@
 					}
 				}
 			],
-			"sid": 672408290846099,
-			"children": [
-				{
-					"eventType": "block",
-					"conditions": [],
-					"actions": [],
-					"sid": 350933161088616
-				}
-			]
+			"sid": 672408290846099
 		},
 		{
 			"eventType": "block",
@@ -1221,122 +1410,6 @@
 			"eventType": "block",
 			"conditions": [
 				{
-					"id": "every-tick",
-					"objectClass": "System",
-					"sid": 428791042431516
-				}
-			],
-			"actions": [
-				{
-					"id": "subtract-from-instvar",
-					"objectClass": "Beta",
-					"sid": 448973955483397,
-					"parameters": {
-						"instance-variable": "CD",
-						"value": "dt"
-					}
-				},
-				{
-					"id": "subtract-from-eventvar",
-					"objectClass": "System",
-					"sid": 627488106214632,
-					"parameters": {
-						"variable": "AttackCD",
-						"value": "dt"
-					}
-				},
-				{
-					"id": "subtract-from-instvar",
-					"objectClass": "Sprite6",
-					"sid": 257160861663295,
-					"parameters": {
-						"instance-variable": "ShootCD",
-						"value": "dt"
-					}
-				}
-			],
-			"sid": 921907870679870,
-			"children": [
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "compare-eventvar",
-							"objectClass": "System",
-							"sid": 756451463275955,
-							"parameters": {
-								"variable": "Health",
-								"comparison": 3,
-								"value": "0"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-eventvar-value",
-							"objectClass": "System",
-							"sid": 435479335374534,
-							"parameters": {
-								"variable": "Health",
-								"value": "0"
-							}
-						},
-						{
-							"id": "destroy",
-							"objectClass": "Beta",
-							"sid": 382137720021011
-						}
-					],
-					"sid": 837299427457840
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "compare-eventvar",
-							"objectClass": "System",
-							"sid": 152541225811553,
-							"parameters": {
-								"variable": "DoorLock",
-								"comparison": 3,
-								"value": "0"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-collisions-enabled",
-							"objectClass": "Door_Dmg",
-							"sid": 828750761206276,
-							"parameters": {
-								"collisions": "enabled"
-							}
-						},
-						{
-							"id": "set-collisions-enabled",
-							"objectClass": "Door_Health",
-							"sid": 401738419967183,
-							"parameters": {
-								"collisions": "enabled"
-							}
-						},
-						{
-							"id": "set-collisions-enabled",
-							"objectClass": "Door_MDmg",
-							"sid": 953660487328971,
-							"parameters": {
-								"collisions": "enabled"
-							}
-						}
-					],
-					"sid": 766571323171246
-				}
-			]
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
 					"id": "on-created",
 					"objectClass": "Chad",
 					"sid": 588241523297114
@@ -1375,6 +1448,17 @@
 					"parameters": {
 						"instance-variable": "Health",
 						"value": "Damage"
+					}
+				},
+				{
+					"id": "flash",
+					"objectClass": "Chad",
+					"sid": 999007560583601,
+					"behaviorType": "Flash",
+					"parameters": {
+						"on-time": "0.1",
+						"off-time": "0.1",
+						"duration": "1.0"
 					}
 				}
 			],
@@ -1418,27 +1502,6 @@
 			"eventType": "block",
 			"conditions": [
 				{
-					"id": "on-collision-with-another-object",
-					"objectClass": "Sprite2",
-					"sid": 942303989986437,
-					"parameters": {
-						"object": "Chad"
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "destroy",
-					"objectClass": "Sprite2",
-					"sid": 189226163616495
-				}
-			],
-			"sid": 278559690257603
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
 					"id": "on-created",
 					"objectClass": "Sprite6",
 					"sid": 290215378264957
@@ -1467,25 +1530,16 @@
 					"parameters": {
 						"object": "Beta"
 					}
-				},
-				{
-					"id": "is-boolean-instance-variable-set",
-					"objectClass": "Beta",
-					"sid": 187528548319842,
-					"parameters": {
-						"instance-variable": "Invincibility"
-					},
-					"isInverted": true
 				}
 			],
 			"actions": [
 				{
 					"id": "subtract-from-eventvar",
 					"objectClass": "System",
-					"sid": 742323489238238,
+					"sid": 139827322492584,
 					"parameters": {
 						"variable": "Health",
-						"value": "2"
+						"value": "1"
 					}
 				},
 				{
@@ -1650,11 +1704,6 @@
 					"parameters": {
 						"object": "Beta"
 					}
-				},
-				{
-					"id": "every-tick",
-					"objectClass": "System",
-					"sid": 796501108621925
 				}
 			],
 			"actions": [
@@ -1670,14 +1719,159 @@
 				{
 					"id": "subtract-from-eventvar",
 					"objectClass": "System",
-					"sid": 907298216460231,
+					"sid": 429484647757876,
 					"parameters": {
 						"variable": "Health",
-						"value": "1"
+						"value": "0.75"
 					}
 				}
 			],
 			"sid": 693153774829845
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "Sprite2",
+					"sid": 330848608630930,
+					"parameters": {
+						"object": "Chad"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "destroy",
+					"objectClass": "Sprite2",
+					"sid": 760994281543585
+				}
+			],
+			"sid": 677263999633963
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-destroyed",
+					"objectClass": "Sprite5",
+					"sid": 401761887887799
+				}
+			],
+			"actions": [
+				{
+					"id": "subtract-from-eventvar",
+					"objectClass": "System",
+					"sid": 919219544452432,
+					"parameters": {
+						"variable": "DoorLock",
+						"value": "1"
+					}
+				}
+			],
+			"sid": 707301957981056
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-clicked",
+					"objectClass": "Button2",
+					"sid": 152450658196157
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout-by-name",
+					"objectClass": "System",
+					"sid": 681233854237415,
+					"parameters": {
+						"layout": "\"Tutorial\""
+					}
+				},
+				{
+					"id": "reset-global-variables",
+					"objectClass": "System",
+					"sid": 847060328982535
+				},
+				{
+					"id": "recreate-initial-objects",
+					"objectClass": "System",
+					"sid": 403148545584528,
+					"parameters": {
+						"object": "Beta",
+						"from-x": "0",
+						"from-y": "0",
+						"to-x": "0",
+						"to-y": "0",
+						"source-layout": "\"\"",
+						"source-layer": "-1",
+						"offset-x": "0",
+						"offset-y": "0",
+						"create-hierarchy": false
+					}
+				},
+				{
+					"id": "recreate-initial-objects",
+					"objectClass": "System",
+					"sid": 116167525479768,
+					"parameters": {
+						"object": "Chad",
+						"from-x": "0",
+						"from-y": "0",
+						"to-x": "0",
+						"to-y": "0",
+						"source-layout": "\"\"",
+						"source-layer": "-1",
+						"offset-x": "0",
+						"offset-y": "0",
+						"create-hierarchy": false
+					}
+				},
+				{
+					"id": "recreate-initial-objects",
+					"objectClass": "System",
+					"sid": 991947458603140,
+					"parameters": {
+						"object": "Sprite6",
+						"from-x": "0",
+						"from-y": "0",
+						"to-x": "0",
+						"to-y": "0",
+						"source-layout": "\"\"",
+						"source-layer": "-1",
+						"offset-x": "0",
+						"offset-y": "0",
+						"create-hierarchy": false
+					}
+				},
+				{
+					"id": "recreate-initial-objects",
+					"objectClass": "System",
+					"sid": 492366539442528,
+					"parameters": {
+						"object": "Sprite5",
+						"from-x": "0",
+						"from-y": "0",
+						"to-x": "0",
+						"to-y": "0",
+						"source-layout": "\"\"",
+						"source-layer": "-1",
+						"offset-x": "0",
+						"offset-y": "0",
+						"create-hierarchy": false
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "Button2",
+					"sid": 945323721281185,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				}
+			],
+			"sid": 751212054294331
 		}
 	],
 	"sid": 277905098473071

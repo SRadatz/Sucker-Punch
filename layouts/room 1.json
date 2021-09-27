@@ -370,7 +370,22 @@
 					},
 					"uid": 68,
 					"instanceVariables": {},
-					"behaviors": {},
+					"behaviors": {
+						"Sine": {
+							"properties": {
+								"movement": "vertical",
+								"wave": "sine",
+								"period": 2,
+								"period-random": 0,
+								"period-offset": 0,
+								"period-offset-random": 0,
+								"magnitude": 2,
+								"magnitude-random": 0,
+								"enabled": true,
+								"live-preview": true
+							}
+						}
+					},
 					"world": {
 						"x": 497.86208682535494,
 						"y": 603.3748431860222,
@@ -483,7 +498,6 @@
 					},
 					"uid": 3,
 					"instanceVariables": {
-						"Invincibility": false,
 						"CD": 0
 					},
 					"behaviors": {
@@ -518,6 +532,9 @@
 								"stop-on-solids": false,
 								"enabled": true
 							}
+						},
+						"Flash": {
+							"properties": {}
 						}
 					},
 					"world": {
@@ -589,7 +606,7 @@
 					"behaviors": {
 						"Turret": {
 							"properties": {
-								"range": 50,
+								"range": 100,
 								"rate-of-fire": 0.5,
 								"rotate": true,
 								"rotate-speed": 180,
@@ -603,7 +620,7 @@
 						"LineOfSight": {
 							"properties": {
 								"obstacles": "solids",
-								"range": 10000,
+								"range": 100,
 								"cone-of-view": 360,
 								"use-collision-cells": true
 							}
@@ -1669,7 +1686,7 @@
 					"behaviors": {
 						"Turret": {
 							"properties": {
-								"range": 50,
+								"range": 100,
 								"rate-of-fire": 0.5,
 								"rotate": true,
 								"rotate-speed": 180,
@@ -1683,7 +1700,7 @@
 						"LineOfSight": {
 							"properties": {
 								"obstacles": "solids",
-								"range": 10000,
+								"range": 100,
 								"cone-of-view": 360,
 								"use-collision-cells": true
 							}
@@ -2401,7 +2418,22 @@
 					},
 					"uid": 142,
 					"instanceVariables": {},
-					"behaviors": {},
+					"behaviors": {
+						"Sine": {
+							"properties": {
+								"movement": "vertical",
+								"wave": "sine",
+								"period": 2,
+								"period-random": 0,
+								"period-offset": 0,
+								"period-offset-random": 0,
+								"magnitude": 2,
+								"magnitude-random": 0,
+								"enabled": true,
+								"live-preview": true
+							}
+						}
+					},
 					"world": {
 						"x": 741.6181794634856,
 						"y": 202.2329269547679,
@@ -2892,7 +2924,7 @@
 					"behaviors": {
 						"Turret": {
 							"properties": {
-								"range": 50,
+								"range": 100,
 								"rate-of-fire": 0.5,
 								"rotate": true,
 								"rotate-speed": 180,
@@ -2906,7 +2938,7 @@
 						"LineOfSight": {
 							"properties": {
 								"obstacles": "solids",
-								"range": 10000,
+								"range": 100,
 								"cone-of-view": 360,
 								"use-collision-cells": true
 							}
@@ -2967,6 +2999,9 @@
 								"enabled": true,
 								"tags": ""
 							}
+						},
+						"Flash": {
+							"properties": {}
 						}
 					},
 					"world": {
@@ -3000,7 +3035,7 @@
 					"behaviors": {
 						"Bullet": {
 							"properties": {
-								"speed": 400,
+								"speed": 200,
 								"acceleration": 0,
 								"gravity": 0,
 								"bounce-off-solids": false,
@@ -3138,6 +3173,44 @@
 							1,
 							1,
 							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "SpriteFont",
+					"properties": {
+						"text": "Immune",
+						"enable-bbcode": true,
+						"character-width": 16,
+						"character-height": 16,
+						"character-set": "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,;:?!-_~#\"'&()[]|`\\/@°+=*$£€<>",
+						"spacing-data": "",
+						"scale": 1,
+						"character-spacing": 0,
+						"line-height": 0,
+						"horizontal-alignment": "left",
+						"vertical-alignment": "top",
+						"wrapping": "word",
+						"initially-visible": true,
+						"origin": "top-left"
+					},
+					"uid": 49,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 1029.8473080726235,
+						"y": 548.1919958712041,
+						"width": 19.496255749977138,
+						"height": 3.831533688040281,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							0.9686274509803922,
+							0.9686274509803922,
+							0.9686274509803922,
 							1
 						],
 						"angle": 0,

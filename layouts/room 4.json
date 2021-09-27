@@ -119,7 +119,6 @@
 					},
 					"uid": 43,
 					"instanceVariables": {
-						"Invincibility": false,
 						"CD": 0
 					},
 					"behaviors": {
@@ -154,6 +153,9 @@
 								"stop-on-solids": false,
 								"enabled": true
 							}
+						},
+						"Flash": {
+							"properties": {}
 						}
 					},
 					"world": {
@@ -298,6 +300,9 @@
 								"enabled": true,
 								"tags": ""
 							}
+						},
+						"Flash": {
+							"properties": {}
 						}
 					},
 					"world": {
@@ -355,6 +360,9 @@
 								"enabled": true,
 								"tags": ""
 							}
+						},
+						"Flash": {
+							"properties": {}
 						}
 					},
 					"world": {
@@ -412,6 +420,9 @@
 								"enabled": true,
 								"tags": ""
 							}
+						},
+						"Flash": {
+							"properties": {}
 						}
 					},
 					"world": {
@@ -469,6 +480,9 @@
 								"enabled": true,
 								"tags": ""
 							}
+						},
+						"Flash": {
+							"properties": {}
 						}
 					},
 					"world": {
@@ -526,6 +540,9 @@
 								"enabled": true,
 								"tags": ""
 							}
+						},
+						"Flash": {
+							"properties": {}
 						}
 					},
 					"world": {
@@ -1582,7 +1599,22 @@
 					},
 					"uid": 274,
 					"instanceVariables": {},
-					"behaviors": {},
+					"behaviors": {
+						"Sine": {
+							"properties": {
+								"movement": "horizontal",
+								"wave": "sine",
+								"period": 2,
+								"period-random": 0,
+								"period-offset": 0,
+								"period-offset-random": 0,
+								"magnitude": 2,
+								"magnitude-random": 0,
+								"enabled": true,
+								"live-preview": false
+							}
+						}
+					},
 					"world": {
 						"x": 120.62450408935547,
 						"y": 717.9064331054688,
@@ -1638,6 +1670,9 @@
 								"enabled": true,
 								"tags": ""
 							}
+						},
+						"Flash": {
+							"properties": {}
 						}
 					},
 					"world": {
@@ -2289,12 +2324,27 @@
 					},
 					"uid": 67,
 					"instanceVariables": {},
-					"behaviors": {},
+					"behaviors": {
+						"Sine": {
+							"properties": {
+								"movement": "vertical",
+								"wave": "sine",
+								"period": 2,
+								"period-random": 0,
+								"period-offset": 0,
+								"period-offset-random": 0,
+								"magnitude": 2,
+								"magnitude-random": 0,
+								"enabled": true,
+								"live-preview": true
+							}
+						}
+					},
 					"world": {
-						"x": 284.62460895654056,
-						"y": 240.015614419736,
-						"width": 5.434215471674804,
-						"height": 5.561514080449854,
+						"x": 303.1100769042969,
+						"y": 251.98089599609375,
+						"width": 10.52063964939174,
+						"height": 9.029530565256835,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [

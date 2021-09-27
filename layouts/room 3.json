@@ -278,7 +278,6 @@
 					},
 					"uid": 10,
 					"instanceVariables": {
-						"Invincibility": false,
 						"CD": 0
 					},
 					"behaviors": {
@@ -313,6 +312,9 @@
 								"stop-on-solids": false,
 								"enabled": true
 							}
+						},
+						"Flash": {
+							"properties": {}
 						}
 					},
 					"world": {
@@ -3532,7 +3534,22 @@
 					},
 					"uid": 217,
 					"instanceVariables": {},
-					"behaviors": {},
+					"behaviors": {
+						"Sine": {
+							"properties": {
+								"movement": "horizontal",
+								"wave": "sine",
+								"period": 2,
+								"period-random": 0,
+								"period-offset": 0,
+								"period-offset-random": 0,
+								"magnitude": 2,
+								"magnitude-random": 0,
+								"enabled": true,
+								"live-preview": false
+							}
+						}
+					},
 					"world": {
 						"x": 447.31573486328125,
 						"y": 726.4401245117188,
@@ -3561,7 +3578,22 @@
 					},
 					"uid": 218,
 					"instanceVariables": {},
-					"behaviors": {},
+					"behaviors": {
+						"Sine": {
+							"properties": {
+								"movement": "horizontal",
+								"wave": "sine",
+								"period": 2,
+								"period-random": 0,
+								"period-offset": 0,
+								"period-offset-random": 0,
+								"magnitude": 2,
+								"magnitude-random": 0,
+								"enabled": true,
+								"live-preview": false
+							}
+						}
+					},
 					"world": {
 						"x": 391.69917382390156,
 						"y": 726.4401245117188,
@@ -3617,6 +3649,9 @@
 								"enabled": true,
 								"tags": ""
 							}
+						},
+						"Flash": {
+							"properties": {}
 						}
 					},
 					"world": {
@@ -3674,6 +3709,9 @@
 								"enabled": true,
 								"tags": ""
 							}
+						},
+						"Flash": {
+							"properties": {}
 						}
 					},
 					"world": {
@@ -4298,6 +4336,9 @@
 								"enabled": true,
 								"tags": ""
 							}
+						},
+						"Flash": {
+							"properties": {}
 						}
 					},
 					"world": {
@@ -4925,6 +4966,9 @@
 								"enabled": true,
 								"tags": ""
 							}
+						},
+						"Flash": {
+							"properties": {}
 						}
 					},
 					"world": {
